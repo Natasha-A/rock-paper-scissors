@@ -11,34 +11,48 @@ function computerPlay() {
     between user and computer selections arguments */
 function playRound(playerSelection, computerSelection) {
   let outcomeText = "";
+  var playerImg = document.getElementById("pImg");
+  var computerImg = document.getElementById("cImg")
 
   if (playerSelection === "rock") {
+    playerImg.src = "./assets/rock/rock-color.png"
     if (computerSelection === "scissors") {
-      outcomeText = "You win!"
+      cImg.src = "./assets/scissors/scissors-color.png"
+      outcomeText = "You win! Rock beats scissors."
       
     } else if (computerSelection === "paper") {
+      cImg.src = "./assets/paper/paper-color.png"
       outcomeText = "Oh no, you lost! Paper beats rock.";
     } else {
+      cImg.src = "./assets/rock/rock-color.png"
       outcomeText = "It's a tie!"
     }
   }
 
   if (playerSelection === "scissors") {
+    playerImg.src = "./assets/scissors/scissors-color.png"
     if (computerSelection === "paper") {
+      computerImg.src = "./assets/paper/paper-color.png"
       outcomeText = "You win! Scissors beats paper."
     } else if (computerSelection === "rock") {
+      computerImg.src = "./assets/rock/rock-color.png"
       outcomeText = "Oh no, you lost! Rock beats scissors."
     } else {
+      computerImg.src = "./assets/scissors/scissors-color.png"
       outcomeText = "It's a tie!"
     }
   }
 
   if (playerSelection === "paper") {
+    playerImg.src = "./assets/paper/paper-color.png"
     if (computerSelection === "rock") {
+      computerImg.src = "./assets/rock/rock-color.png"
       outcomeText = "You win! Paper beats rock."
     } else if (computerSelection === "scissors") {
+      computerImg.src = "./assets/scissors/scissors-color.png"
       outcomeText = "Oh no, you lost! Scissors beats paper."
     } else {
+      computerImg.src = "./assets/paper/paper-color.png"
       outcomeText = "It's a tie!"
     }
   }
@@ -49,6 +63,8 @@ function playRound(playerSelection, computerSelection) {
 function gameLoop() {
   let playerSelection = null;
   let computerSelection = null;
+  var playerImg = document.getElementById("pImg");
+  var computerImg = document.getElementById("cImg")
   let result = "";
   let playerScore = 0;
   let computerScore = 0;
@@ -109,6 +125,8 @@ function gameLoop() {
         if (playAgain === "try again") {
           playerScore = 0;
           computerScore = 0;
+          playerImg.src = "./assets/default_icon.png"
+          computerImg.src = "./assets/default_icon.png"
           displayResult_Simple.textContent = "";
           displayResult_Detailed.textContent = "";
           displayScore.textContent = "0 - 0";
@@ -122,6 +140,8 @@ function gameLoop() {
         if (playAgain === "try again") {
           playerScore = 0;
           computerScore = 0;
+          playerImg.src = "./assets/default_icon.png"
+          computerImg.src = "./assets/default_icon.png"
           displayResult_Simple.textContent = "";
           displayResult_Detailed.textContent = "";
           displayScore.textContent = "0 - 0";

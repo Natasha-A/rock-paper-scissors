@@ -1,29 +1,79 @@
-section {
+body {
+  margin:0;
+
+}
+.site {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-family: Raleway;
   font-weight: 200;
+  min-height: 100vh;
+
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Raleway;
+  font-weight: 200;
+  flex: 1 1 auto;
+}
+
+footer {
+  padding: 20px;
+  font-weight:600;
+  background-color: rgb(255, 227, 237);
+  width: 100%;
+  text-align: center;
+  color: rgb(149, 149, 149);
+  height: 30px;
+}
+  
 .titles {
   display: flex;
-  font-size: 30px;
-  width: 600px;
+  font-size: 25px;
+  font-weight: 200;
+  width: 610px;
   justify-content: space-between;
+  margin-top: 20px;
   
 }
 
+#score {
+  font-size: 30px;
+  font-weight: 300;
+}
+
 .gameIcons {
-  width: 750px;
+  width: 825px;
   display: flex;
   justify-content: space-between;
 }
 
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button img {
+  max-width: 80px;
+  background-color: none;
+}
+
 .gameIcons img {
-  max-width: 200px;
+  margin-top: 20px;
+  max-width: 270px;
   display: flex;
+  object-fit: contain;
 }
 
 .titles .item-2 {
@@ -33,19 +83,18 @@ section {
 }
 
  #cpuIcon, #pIcon {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 header {
-  font-size: 40px;
+  font-size: 60px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   padding: 30px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .rps-buttons {
-  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,10 +109,12 @@ header {
   font-size: 30px;
   text-align: center;
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 #result-1 {
   font-weight: 400;
+  margin-bottom: 15px;
 }
 
 #result-2 {
