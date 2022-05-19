@@ -3,6 +3,7 @@
 function computerPlay() {
   let options = ["rock", "paper", "scissors"];
   let selection = options[Math.floor(Math.random() * 3)]
+  console.log("Computer chose: " + selection);
   return selection;
 }
 
@@ -10,8 +11,6 @@ function computerPlay() {
     between user and computer selections arguments */
 function playRound(playerSelection, computerSelection) {
   let outcomeText = "";
-  console.log(playerSelection);
-  console.log(computerSelection);
 
   if (playerSelection === "rock") {
     if (computerSelection === "scissors") {
@@ -21,9 +20,9 @@ function playRound(playerSelection, computerSelection) {
     } else {
       outcomeText = "It's a tie!"
     }
-  } 
+  }
 
-  if ( playerSelection === "scissors") {
+  if (playerSelection === "scissors") {
     if (computerSelection === "paper") {
       outcomeText = "You win! Scissors beats paper."
     } else if (computerSelection === "rock") {
@@ -33,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  if ( playerSelection === "paper") {
+  if (playerSelection === "paper") {
     if (computerSelection === "rock") {
       outcomeText = "You win! Paper beats rock."
     } else if (computerSelection === "scissors") {
@@ -45,36 +44,73 @@ function playRound(playerSelection, computerSelection) {
   return outcomeText;
 }
 
-function game() {
+/* Main game loop to hand player and computer scores and event handling */ 
+function gameLoop() {
+  let playerSelection = null;
+  let computerSelection = null;
+  let result = "";
   let playerScore = 0;
   let computerScore = 0;
 
-  for (let i=0; i < 5; i++) {
-    let playerSelection = prompt("Enter your match choice: ");
-    let pSelection_result = playerSelection.toLowerCase();
-    const computerSelection = computerPlay();
+  // Event listeners for player's buttons and trigger computer selection
+  const r_btn = document.getElementById('rock-btn');
+  r_btn.addEventListener('click', () => {
+    console.log("Player chose: rock")
+    playerSelection = "rock";
+    computerSelection = computerPlay();
+  });
 
-    // verify user's input
-    while (pSelection_result === "") {
-     alert("Incorrect input. Please enter either 'rock', 'paper', or 'scissors'.")
-      pSelection_result = prompt("Enter your match choice again:");
-      console.log(pSelection_result);
-    }
+  const p_btn = document.getElementById('paper-btn');
+  p_btn.addEventListener('click', () => {
+    console.log("Player chose: paper");
+    playerSelection = "paper";
+    computerSelection = computerPlay();
 
-    let result = playRound(pSelection_result, computerSelection);
-    console.log(result);
+  });
 
-    // determine winner based on results text 
-    if (result.includes("win")) {
-      playerScore++;
-    } else if (result.includes("lost")) {
-      computerScore++;
-    }
+  const s_btn = document.getElementById('scissors-btn');
+  s_btn.addEventListener('click', () => {
+    console.log("Player chose: scissors")
+    playerSelection = "scissors"
+    computerSelection = computerPlay();
+  });
 
-  }
+  // Determine the results for each round
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      result = playRound(playerSelection, computerSelection);
+      console.log(result);
 
-  console.log("Wins: " +  playerScore);
-  console.log("Loses: " + computerScore);
+      // determine and displayer winner/loser for round
+      if (result.includes("win")) {
+        playerScore++;
+      } else if (result.includes("lost")) {
+        computerScore++;
+      }
+      console.log(playerScore + " - " + computerScore);
+
+      // end game once player or computer reaches 5 points
+      if (playerScore == 5) {
+        console.log("You win the game!")
+        let playAgain = prompt("Play again?", "yes");
+
+        if (playAgain == "yes") {
+          playerScore = 0;
+          computerScore = 0;
+        }  
+      } else if (computerScore == 5) {
+        console.log("You lost the game!")
+        let playAgain = prompt("Play again?", "yes");
+
+        if (playAgain == "yes") {
+          playerScore = 0;
+          computerScore = 0;
+        } 
+      }
+
+    });
+  });
 }
 
-game();
+gameLoop();

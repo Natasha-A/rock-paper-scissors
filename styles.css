@@ -1,0 +1,21 @@
+header {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  padding: 30px;
+}
+
+.rps-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rps-buttons button {
+  padding: 10px;
+  margin: 10px;
+}
+
