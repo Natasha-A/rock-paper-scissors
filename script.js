@@ -14,7 +14,8 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === "rock") {
     if (computerSelection === "scissors") {
-      outcomeText = "You win! Rock beats scissors.";
+      outcomeText = "You win!"
+      
     } else if (computerSelection === "paper") {
       outcomeText = "Oh no, you lost! Paper beats rock.";
     } else {
@@ -51,6 +52,9 @@ function gameLoop() {
   let result = "";
   let playerScore = 0;
   let computerScore = 0;
+  var displayResult_Simple = document.getElementById('result-1');
+  var displayResult_Detailed = document.getElementById('result-2');
+
 
   // Event listeners for player's buttons and trigger computer selection
   const r_btn = document.getElementById('rock-btn');
@@ -80,35 +84,49 @@ function gameLoop() {
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       result = playRound(playerSelection, computerSelection);
+      const results = result.split('!');
+
+      displayResult_Simple.textContent = results[0] + "!";
+      displayResult_Detailed.textContent = results[1];
       console.log(result);
 
-      // determine and displayer winner/loser for round
+      // Determine and displayer winner/loser for round
       if (result.includes("win")) {
         playerScore++;
       } else if (result.includes("lost")) {
         computerScore++;
       }
       console.log(playerScore + " - " + computerScore);
+      var displayScore = document.getElementById('score');
+      displayScore.textContent = playerScore + " - " + computerScore;
 
       // end game once player or computer reaches 5 points
-      if (playerScore == 5) {
+      if (playerScore >= 5) {
         console.log("You win the game!")
-        let playAgain = prompt("Play again?", "yes");
+        displayScore.textContent = 5 + " - " + computerScore;
+          playAgain = prompt("You win!", "try again");
 
-        if (playAgain == "yes") {
+        if (playAgain === "try again") {
           playerScore = 0;
           computerScore = 0;
-        }  
+          displayResult_Simple.textContent = "";
+          displayResult_Detailed.textContent = "";
+          displayScore.textContent = "0 - 0";
+        }
+
       } else if (computerScore == 5) {
         console.log("You lost the game!")
-        let playAgain = prompt("Play again?", "yes");
+        displayScore.textContent = playerScore + " - " + 5;
+          playAgain = prompt("You lose!", "try again");
 
-        if (playAgain == "yes") {
+        if (playAgain === "try again") {
           playerScore = 0;
           computerScore = 0;
-        } 
+          displayResult_Simple.textContent = "";
+          displayResult_Detailed.textContent = "";
+          displayScore.textContent = "0 - 0";
+        }
       }
-
     });
   });
 }

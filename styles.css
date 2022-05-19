@@ -1,14 +1,51 @@
-header {
-  font-size: 40px;
+section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  flex-direction: column;
+  font-family: Raleway;
   font-weight: 200;
+}
+
+.titles {
+  display: flex;
+  font-size: 30px;
+  width: 600px;
+  justify-content: space-between;
+  
+}
+
+.gameIcons {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gameIcons img {
+  max-width: 200px;
+  display: flex;
+}
+
+.titles .item-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ #cpuIcon, #pIcon {
+  font-size: 40px;
+}
+
+header {
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   padding: 30px;
+  margin-top: 20px;
 }
 
 .rps-buttons {
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,3 +56,16 @@ header {
   margin: 10px;
 }
 
+.results {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#result-1 {
+  font-weight: 400;
+}
+
+#result-2 {
+  font-size: 20px;
+}
