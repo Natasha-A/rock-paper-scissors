@@ -80,6 +80,7 @@ function gameLoop() {
     computerSelection = computerPlay();
   });
 
+
   const p_btn = document.getElementById('paper-btn');
   p_btn.addEventListener('click', () => {
     console.log("Player chose: paper");
@@ -150,5 +151,17 @@ function gameLoop() {
     });
   });
 }
+
+/* Game button move hover functions to change images */ 
+function hover(name,element) {
+  element.setAttribute('src', './assets/' + name + '/' + name + '-color.png')
+}
+
+function unhover(name, element) {
+  element.setAttribute('src', './assets/' + name + '/' + name + '-outline.png')
+}
+
+
+
 
 gameLoop();

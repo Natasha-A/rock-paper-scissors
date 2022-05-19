@@ -74,6 +74,7 @@ button img {
   max-width: 270px;
   display: flex;
   object-fit: contain;
+  margin-top: 10px;
 }
 
 .titles .item-2 {
@@ -104,6 +105,7 @@ header {
   padding: 10px;
   margin: 10px;
 }
+
 
 .results {
   font-size: 30px;
