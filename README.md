@@ -8,8 +8,8 @@ View the live version [here!](https://github.com/Natasha-A/rock-paper-scissors/b
 
 #### What I learned: ####
   - **CSS transformation** and **Flexbox** techniques applied 
-  - Practiced **DOM Manipulations** and **event-driven** Javascript code 
-  - Strong understanding of applying Javascript fundamentals, (such as conditionals, functional declarations/expressions, loops, scopes, callbacks, maps)
+  - Practiced **DOM Manipulations** and **Event-driven** Javascript code 
+  - Strong understanding of applying Javascript fundamentals (such as conditionals, functional declarations/expressions, loops, scopes, callbacks, maps)
 
 #### Features: ####
   - UI designed to be modern and simplistic, created using Figma
