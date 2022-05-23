@@ -172,8 +172,6 @@ openModalButtons.forEach(button => {
   var scoreLabel = document.querySelector(" #scoreLabel");
 scoreLabel.textContent = score;
 })
-
-
 }
 
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
