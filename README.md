@@ -2,9 +2,9 @@
 
 ## A HTML, CSS and Javascript project based on Rock, Paper, Scissors.
 
-View the live version [here!](https://github.com/Natasha-A/rock-paper-scissors/blob/main/assets/preview.png)
+View the live version [here!](https://natasha-a.github.io/rock-paper-scissors/)
 
-![This is an image](./assets/preview.png)
+![This is an image](https://github.com/Natasha-A/rock-paper-scissors/blob/main/assets/preview.png)
 
 #### What I learned: ####
   - **CSS transformation** and **Flexbox** techniques applied 
