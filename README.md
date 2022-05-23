@@ -4,7 +4,7 @@
 
 View the live version [here!](https://natasha-a.github.io/rock-paper-scissors/)
 
-![This is an image]('./assets/preview.png')
+![This is an image](./assets/preview.png)
 
 #### What I learned: ####
   - **CSS transformation** and **Flexbox** techniques applied 
